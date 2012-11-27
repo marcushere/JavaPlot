@@ -167,7 +167,7 @@ public class GNUPlotParameters extends PropertiesHolder implements Serializable 
      * @param term The terminal to use
      * @return The GNUPlot program
      */
-    String getPlotCommands(GNUPlotTerminal term) {
+	String getPlotCommands(GNUPlotTerminal term) {
         StringBuffer bf = new StringBuffer();
 
         /* First execute pre-init commands */

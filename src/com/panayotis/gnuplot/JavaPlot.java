@@ -156,6 +156,11 @@ public class JavaPlot extends GNUPlot {
      * @param function
      */
     public void addPlot(String function) { addPlot(new FunctionPlot(function)); }
+	/**
+	 * 
+	 * @param function
+	 */    
+    public void addPlot(String function, String title) { addPlot(new FunctionPlot(function,title)); }
     /**
      * 
      * @param set

@@ -136,8 +136,9 @@ class GNUPlotExec {
                             if (line.equals("^")) {
                                 line = "";
                             }  // Ignore line with error pointer
-                            if (!line.equals("")) {     // Only take care of not empty lines
+                            if (!line.equals("") && line.startsWith("gnuplot>") == false) {     // Only take care of not empty lines
                                 if (line.indexOf(GNUPlotParameters.ERRORTAG) >= 0) {
+                                	System.out.println(line);
                                     msg.error = "Error while parsing \'plot\' arguments.";    // Error was found in plot command
                                     break;
                                 }
@@ -200,7 +201,7 @@ class GNUPlotExec {
 
         } catch (IOException ex) {
             throw new GNUPlotException("IOException while executing \"" + getGNUPlotPath() + "\":" + ex.getLocalizedMessage());
-        }
+		}
 
     }
 

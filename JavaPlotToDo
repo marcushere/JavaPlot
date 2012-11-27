@@ -1,0 +1,7 @@
+* Extend Graph with Fit to override Graph
+* Add and addFit to GNUPlot and JavaPlot
+* Pull data from Plot for the fit
+* Add method to get fit parameters to the Plot interface
+* Extend DataSetPlot to make DataSetFit which will fit and plot if wanted
+* Fit parameters (gotten from GNUPlot) are stored in GNUPlotParameters by GNUPlotExec by number of the order of the plots
+* Fit parameters can be retrieved from JavaPlot or GNUPlot

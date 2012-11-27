@@ -1,7 +1,7 @@
 /*
  * FunctionPlot.java
  *
- * Created on 12 Οκτώβριος 2007, 5:17 μμ
+ * Created on 12 ÎŸÎºÏ„ÏŽÎ²Ï�Î¹Î¿Ï‚ 2007, 5:17 Î¼Î¼
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
@@ -30,6 +30,13 @@ public class FunctionPlot extends AbstractPlot{
         if (function==null) function = "0";
         this.function = function;
         set("title", "'"+function+"'");
+        setDefinition(function);
+    }
+    
+    public FunctionPlot(String function,String title) {
+        if (function==null) function = "0";
+        this.function = function;
+        set("title", "'"+title+"'");
         setDefinition(function);
     }
 

@@ -1,7 +1,7 @@
 /*
  * GNUPlot.java
  *
- * Created on 12 Οκτώβριος 2007, 3:07 μμ
+ * Created on 12 ÎŸÎºÏ„ÏŽÎ²Ï�Î¹Î¿Ï‚ 2007, 3:07 Î¼Î¼
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
@@ -11,6 +11,7 @@ package com.panayotis.gnuplot;
 import com.panayotis.gnuplot.layout.GraphLayout;
 import com.panayotis.gnuplot.plot.Axis;
 import com.panayotis.gnuplot.plot.Graph;
+import com.panayotis.gnuplot.plot.GraphWithFit;
 import com.panayotis.gnuplot.plot.Page;
 import com.panayotis.iodebug.Debug;
 import com.panayotis.gnuplot.plot.Plot;
@@ -193,6 +194,10 @@ public class GNUPlot {
         }
         param.addPlot(plot);
     }
+    
+    public void addFit(Fit fit){
+    	
+    }
 
     /**
      * Add a defined graph to this GNUPlot object.
@@ -355,7 +360,7 @@ public class GNUPlot {
 
     /**
      * Execute gnuplot commands before any kind of initialization. This method together
-     * with getPostInit() is useful to add basic commands to gnuplot exetutable, if the
+     * with getPostInit() is useful to add basic commands to gnuplot executable, if the
      * library does not support the desired functionality
      * @return Array of pre-init commands
      */
@@ -365,7 +370,7 @@ public class GNUPlot {
 
     /**
      * Execute gnuplot commands before any kind of initialization. This method together
-     * with getPostInit() is useful to add basic commands to gnuplot exetutable, if the
+     * with getPostInit() is useful to add basic commands to gnuplot executable, if the
      * library does not support the desired functionality
      * @return Array of pre-init commands
      */

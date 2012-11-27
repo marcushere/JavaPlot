@@ -1,7 +1,7 @@
 /*
  * DataSetPlot.java
  *
- * Created on 12 Οκτώβριος 2007, 4:07 μμ
+ * Created on 12 ÎŸÎºÏ„ÏŽÎ²Ï�Î¹Î¿Ï‚ 2007, 4:07 Î¼Î¼
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
@@ -22,7 +22,7 @@ import com.panayotis.gnuplot.dataset.PointDataSet;
  */
 public class DataSetPlot extends AbstractPlot {
     
-    private DataSet dataset;
+    protected DataSet dataset;
     
     /**
      * Create a new data set with a default data set.
