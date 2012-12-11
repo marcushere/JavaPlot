@@ -46,5 +46,7 @@ public class FunctionPlot extends AbstractPlot{
      * @param buf This parameter is not used
      */
     public void retrieveData(StringBuffer buf) { }
+    
+    public void retrieveFitDefinition(StringBuffer buf){}
 
 }

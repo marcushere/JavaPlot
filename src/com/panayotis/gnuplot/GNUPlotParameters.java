@@ -8,15 +8,18 @@
  */
 package com.panayotis.gnuplot;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 import com.panayotis.gnuplot.layout.GraphLayout;
 import com.panayotis.gnuplot.plot.Axis;
+import com.panayotis.gnuplot.plot.DataSetFit;
 import com.panayotis.gnuplot.plot.Graph;
 import com.panayotis.gnuplot.plot.Graph3D;
+import com.panayotis.gnuplot.plot.GraphWithFit;
 import com.panayotis.gnuplot.plot.Page;
 import com.panayotis.gnuplot.plot.Plot;
 import com.panayotis.gnuplot.terminal.GNUPlotTerminal;
-import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * This is a placeholder for the parameters used to create the actual plot.
@@ -26,6 +29,10 @@ import java.util.ArrayList;
 public class GNUPlotParameters extends PropertiesHolder implements Serializable {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
      * Default error string to use while parsing gnuplot output
      */
     public final static String ERRORTAG = "_ERROR_";
@@ -41,6 +48,7 @@ public class GNUPlotParameters extends PropertiesHolder implements Serializable 
     private int defaultgraph;
     private ArrayList<String> preinit;
     private ArrayList<String> postinit;
+	private int defaultfit;
 
     /**
      *  Create a new plot with the default parameters
@@ -107,7 +115,7 @@ public class GNUPlotParameters extends PropertiesHolder implements Serializable 
     public void newGraph() {
         addGraph(new Graph());
     }
-
+    
     /**
      * Add a new Graph3D object. This method is used to create a multiplot graph.
      * Every "splot" command corresponds to a different Graph object. In order to
@@ -200,4 +208,28 @@ public class GNUPlotParameters extends PropertiesHolder implements Serializable 
 
         return bf.toString();
     }
+
+	/**
+	 * @param fit
+	 */
+	public void addDataSetFit(DataSetFit fit) {
+		page.get(defaultfit).add(fit);
+	}
+
+	/**
+	 * @param fitGraph
+	 */
+	public void addFitGraph(GraphWithFit fitGraph) {
+		page.add(fitGraph);
+		defaultfit = page.size() - 1;
+	}
+
+	/**
+	 * 
+	 */
+	public void newFitGraph() {
+		addFitGraph(new GraphWithFit());
+	}
+	
+	
 }

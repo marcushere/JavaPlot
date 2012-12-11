@@ -106,5 +106,4 @@ public class DataSetPlot extends AbstractPlot {
         return dataset;
     }
     
-    
 }

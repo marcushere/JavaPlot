@@ -119,7 +119,7 @@ class GNUPlotExec {
             }
             final Process proc = Runtime.getRuntime().exec(command);
 
-            /* Windows buffers DEMAND asynchronus read & write */
+            /* Windows buffers DEMAND asynchronous read & write */
 
             /* Thread to process the STDERR of gnuplot */
             Thread err_thread = new Thread() {
@@ -136,7 +136,7 @@ class GNUPlotExec {
                             if (line.equals("^")) {
                                 line = "";
                             }  // Ignore line with error pointer
-                            if (!line.equals("") && line.startsWith("gnuplot>") == false) {     // Only take care of not empty lines
+                            if (line.equals("") == false && line.startsWith("gnuplot>") == false) {     // Only take care of not empty lines
                                 if (line.indexOf(GNUPlotParameters.ERRORTAG) >= 0) {
                                 	System.out.println(line);
                                     msg.error = "Error while parsing \'plot\' arguments.";    // Error was found in plot command

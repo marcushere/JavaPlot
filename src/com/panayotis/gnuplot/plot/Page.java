@@ -88,6 +88,7 @@ public class Page extends ArrayList<Graph> {
             bf.append(NL);
 
             LayoutMetrics metrics;
+            
             for (Graph gr : this) {
                 metrics = gr.getMetrics();
                 if (metrics != null) {
